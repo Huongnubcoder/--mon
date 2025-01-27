@@ -7,7 +7,7 @@ using UnityEngine;
 public class EnemyMove : MonoBehaviour
 {
     // Start is called before the first frame update
-    public Transform PlayerPosition;
+    private Transform PlayerPosition;
     public float MoveSpeed = 3f;
     public bool IsChasing = false;
     public Vector3 StartPoint;
