@@ -38,7 +38,7 @@ public class EnemyMove : MonoBehaviour
             {
                 transform.position = StartPoint;
             }
-            if (Vector2.Distance(transform.position, PlayerPosition.position) < 3f) { 
+            if (Vector2.Distance(transform.position, PlayerPosition.position) < 3f) {
                 IsChasing = true;
             }
         }
