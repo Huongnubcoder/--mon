@@ -10,7 +10,7 @@ public class EnemySpawn : MonoBehaviour
     public GameObject[] SpawnPrefab;
     public float Radius = 3f;
     public float EnemyCount = 0;
-    public float SpawnRate = 3f;
+    public float SpawnRate = 1f;
     void Start()
     {
         StartCoroutine(spawner());
@@ -19,25 +19,32 @@ public class EnemySpawn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        StartCoroutine (spawner());
     }
     public IEnumerator spawner() { 
         WaitForSeconds Wait = new WaitForSeconds(SpawnRate);
-        
+
         while (CanSpawn)
         {
-            Vector3 rand = Random.insideUnitCircle * Radius;
-            Vector3 SpawnPosition = new Vector3(rand.x + transform.position.x, rand.y + transform.position.y, transform.position.z);
-            yield return Wait;
-            int EnemyType = Random.Range(0, SpawnPrefab.Length );
-            GameObject Enemy = SpawnPrefab[EnemyType];
-            Instantiate(Enemy, SpawnPosition, Quaternion.identity);
-            EnemyCount++;
+            
+            
+                Vector3 rand = Random.insideUnitCircle * Radius;
+                Vector3 SpawnPosition = new Vector3(rand.x + transform.position.x, rand.y + transform.position.y, transform.position.z);
+                if (Physics2D.OverlapCircle(SpawnPosition,0.5f) == null) { 
+                    int EnemyType = Random.Range(0, SpawnPrefab.Length );
+                    GameObject Enemy = SpawnPrefab[EnemyType];
+                    Instantiate(Enemy, SpawnPosition, Quaternion.identity);
+                    EnemyCount++;
+                    break;
+                }
+
+            
             if (EnemyCount >= 5)
             {
                 CanSpawn = false;
                 break;
-            }
+            }  
+            yield return Wait;
         }
     }
     

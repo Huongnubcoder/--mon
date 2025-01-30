@@ -13,7 +13,7 @@ public class PlayerHealth : MonoBehaviour
     {
         HealthText.text = "HP: " + CurrentHealth + " / " + MaxHealth;
     }
-    public void changeHealth(int Amount)
+    public void ChangeHealth(int Amount)
     {
         DealthCheck = false;
         CurrentHealth += Amount;
@@ -23,7 +23,9 @@ public class PlayerHealth : MonoBehaviour
             gameObject.SetActive(false);
             DealthCheck = true;
         }
-        if (DealthCheck) {
+        if (DealthCheck)
+        {
+
             gameObject.transform.position = SpawnPoint.position;
             CurrentHealth = 100;
             HealthText.text = "HP: " + CurrentHealth + " / " + MaxHealth;
@@ -31,3 +33,4 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 }
+
