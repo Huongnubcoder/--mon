@@ -10,10 +10,10 @@ public class EnemySpawn : MonoBehaviour
     public GameObject[] SpawnPrefab;
     public float Radius = 3f;
     public float EnemyCount = 0;
-    public float SpawnRate = 1f;
+    public float SpawnRate = 3f;
     void Start()
     {
-        StartCoroutine(spawner());
+        
     }
 
     // Update is called once per frame
