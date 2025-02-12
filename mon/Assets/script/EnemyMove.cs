@@ -27,18 +27,20 @@ public class EnemyMove : MonoBehaviour
         if (IsChasing)
         {
             transform.position = Vector2.MoveTowards(transform.position, PlayerPosition.position, MoveSpeed * Time.deltaTime);
-            if (Vector2.Distance(transform.position, PlayerPosition.position) > 3f) {
-                
+            if (Vector2.Distance(transform.position, PlayerPosition.position) > 3f)
+            {
                 IsChasing = false;
             }
         }
-        else {
+        else
+        {
             transform.position = Vector2.MoveTowards(transform.position, StartPoint, MoveSpeed * Time.deltaTime);
             if (Vector2.Distance(transform.position, StartPoint) < ReturnThreshold)
             {
                 transform.position = StartPoint;
             }
-            if (Vector2.Distance(transform.position, PlayerPosition.position) < 3f) {
+            if (Vector2.Distance(transform.position, PlayerPosition.position) < 3f)
+            {
                 IsChasing = true;
             }
         }

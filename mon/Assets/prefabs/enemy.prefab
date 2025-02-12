@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4078736480124097419}
   - component: {fileID: 8976585506375252017}
   - component: {fileID: 3401816709549262112}
-  - component: {fileID: -7370822939927455476}
+  - component: {fileID: -5837639511350515419}
   m_Layer: 0
   m_Name: enemy
   m_TagString: Untagged
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 1
---- !u!114 &-7370822939927455476
+--- !u!114 &-5837639511350515419
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,7 +175,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc5f1a0f67ac664ca605f439d99bbd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerPosition: {fileID: 0}
   MoveSpeed: 3
   IsChasing: 0
   StartPoint: {x: 0, y: 0, z: 0}

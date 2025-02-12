@@ -10,16 +10,16 @@ public class EnemySpawn : MonoBehaviour
     public GameObject[] SpawnPrefab;
     public float Radius = 3f;
     public float EnemyCount = 0;
-    public float SpawnRate = 3f;
+    public float SpawnRate = 1f;
     void Start()
     {
-        
+        StartCoroutine (spawner());
     }
 
     // Update is called once per frame
     void Update()
     {
-        StartCoroutine (spawner());
+        
     }
     public IEnumerator spawner() { 
         WaitForSeconds Wait = new WaitForSeconds(SpawnRate);
@@ -35,7 +35,7 @@ public class EnemySpawn : MonoBehaviour
                     GameObject Enemy = SpawnPrefab[EnemyType];
                     Instantiate(Enemy, SpawnPosition, Quaternion.identity);
                     EnemyCount++;
-                    break;
+                    
                 }
 
             

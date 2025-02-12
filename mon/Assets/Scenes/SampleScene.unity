@@ -421,7 +421,7 @@ MonoBehaviour:
   - {fileID: 4649441190157664836, guid: afe09762e815a964ab4f3e23bc2e9ab0, type: 3}
   Radius: 3
   EnemyCount: 0
-  SpawnRate: 3
+  SpawnRate: 1
 --- !u!1 &892828135
 GameObject:
   m_ObjectHideFlags: 0
